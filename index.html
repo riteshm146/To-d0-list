@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Summary</h3>
+      <div class="summary">
+        <p>Total Tasks: <span id="total-tasks">0</span></p>
+        <p>Completed: <span id="completed-tasks">0</span></p>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+      <div class="calendar">
+        <h4>Calendar</h4>
+        <div id="calendar"></div>
+      </div>
+    </aside>
+    <main class="todo-app">
+      <header>
+        <h2>Professional To-Do List</h2>
+        <div class="theme-selector">
+          <label for="theme">Theme:</label>
+          <select id="theme" onchange="changeTheme(this.value)">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </select>
+        </div>
+      </header>
+      <div class="input-row">
+        <input type="text" id="task-name" placeholder="Enter task">
+        <select id="category">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="urgent">Urgent</option>
+        </select>
+        <input type="date" id="task-deadline">
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <div class="filters">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('work')">Work</button>
+        <button onclick="filterTasks('personal')">Personal</button>
+        <button onclick="filterTasks('urgent')">Urgent</button>
+      </div>
+      <ul id="task-list"></ul>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
